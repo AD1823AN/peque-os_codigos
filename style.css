@@ -1,0 +1,84 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #ff4e50, #f9d423);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+#container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Corazón 3D */
+.heart_3d {
+    width: 150px;
+    height: 150px;
+    background: red;
+    position: relative;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    animation: rotate 6s linear infinite;
+    clip-path: polygon(50% 0%, 100% 35%, 100% 80%, 50% 100%, 0% 80%, 0% 35%);
+}
+
+/* Animación de rotación 3D */
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg) scale(1);
+    }
+    50% {
+        transform: rotateY(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotateY(360deg) scale(1);
+    }
+}
+
+/* Texto dentro del corazón */
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4e50;
+}
+
+/* Corazones flotantes */
+.floating_heart {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: red;
+    clip-path: path("M10,2 C12,0 18,4 10,12 C2,4 8,0 10,2 Z");
+    animation: floatHearts 5s infinite ease-in-out;
+}
+
+/* Animación de corazones flotantes */
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-100px) scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-200px) scale(0.5);
+        opacity: 0;
+    }
+}
