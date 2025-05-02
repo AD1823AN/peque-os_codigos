@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(to top right, #ffe1f2, #e2c4ff);
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.container {
+  padding: 40px 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.cute-img {
+  width: 60%;
+  max-width: 200px;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+h1, h2 {
+  color: #ff69b4;
+  text-shadow: 1px 1px #fff;
+  font-size: clamp(20px, 6vw, 32px);
+}
+
+.btn-group {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: clamp(16px, 4vw, 20px);
+  min-width: 100px;
+  max-width: 200px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#yesBtn {
+  background-color: #ffb6c1;
+}
+
+#noBtn {
+  background-color: #d3d3d3;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.hearts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.heart-letter {
+  position: relative;
+  font-size: clamp(30px, 10vw, 60px);
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.letter {
+  font-size: clamp(20px, 6vw, 36px);
+  color: #a45eff;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.heart-letter.show .letter {
+  opacity: 1;
+}
+
+.end-btn {
+  margin-top: 30px;
+  padding: 14px 30px;
+  background-color: #d8a9ff;
+  color: white;
+  font-weight: bold;
+  font-size: clamp(18px, 5vw, 26px);
+  max-width: 90%;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.info-text {
+  color: #ff69b4;
+  font-size: clamp(16px, 5vw, 24px);
+  margin: 10px 0;
+}
+
+/* Animación de brillitos */
+@keyframes sparkle {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #cc88ff;
+  border-radius: 50%;
+  animation: sparkle 0.8s ease-out forwards;
+}
